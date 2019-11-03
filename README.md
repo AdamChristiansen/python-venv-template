@@ -239,25 +239,10 @@ is to use [pyinstaller].
 can only run on operating systems similar to the one that built it. This means
 that an executable built on Linux will not run on Windows and vice versa.
 
-## Using a Virtual Environment in IDEs
-
-- [PyCharm]
-  - Refer to the [PyCharm creating a virtual environment] documentation
-- [Spyder]
-  - Go to `Tools > Preferences > Python Interpreter` and select the
-      interpreter that the virtual envirinment installs (ie.
-      `<path_to_project>/.env/bin/python`)
-- [VS Code]
-  - Refer to the [using Python environments in VS Code] documentation
 
 
 [GitHub]: https://github.com/
-[PyCharm]: https://www.jetbrains.com/pycharm/
-[PyCharm creating a virtual environment]: https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html
 [pyinstaller]: http://www.pyinstaller.org/
 [pytest]: https://pytest.org/
-[Spyder]: https://www.spyder-ide.org/
 [tox]: https://github.com/tox-dev/tox
-[Using Python environments in VS Code]: https://code.visualstudio.com/docs/python/environments
 [virtual environment]: https://docs.python.org/3/tutorial/venv.html
-[VS Code]: https://code.visualstudio.com/
