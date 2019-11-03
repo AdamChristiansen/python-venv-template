@@ -196,6 +196,44 @@ To share this code without using `pip` or a service like [GitHub]:
     - **Note**: it might be smart to remove the `.git` directory before
       sharing.
 
+### Step 6: Creating a Portable Executable
+
+Once the project is ready for production, an easy way to create an executable
+is to use [pyinstaller].
+
+1.  Exit a virtual environment if in one (run `deactivate`).
+2.  Install `pyinstaller` with
+
+    ```sh
+    pip3 install pyinstaller
+    ```
+
+3.  Enter the virtual environment (run `source .env/bin/activate` or OS/shell
+    equivalent).
+4.  Run `pyinstaller` to create a single binary file
+
+    ```sh
+    pyinstaller <path_to_package>/__main__.py --onefile -n <exe_name>
+    ```
+
+    The above command will package the program in the `__main__.py` file into a
+    single executable file and place it in `dist/<exe_name>`. The `<exe_name>`
+    is specified because otherwise it is called `__main__`, which isn't too
+    useful.
+
+    For the example project, something like this
+
+    ```sh
+    pyinstaller src/fib/__main__.py --onefile -n fib
+    ```
+
+    can be used to create `dist/fib`. Now the `fib` executable can be placed
+    anywhere on the system and executed as it is completely self contained.
+
+**Note**: The `pyinstaller` does not cross-compile, so the produced executable
+can only run on operating systems similar to the one that built it. This means
+that an executable built on Linux will not run on Windows and vice versa.
+
 ## Using a Virtual Environment in IDEs
 
 - [PyCharm]
@@ -211,6 +249,7 @@ To share this code without using `pip` or a service like [GitHub]:
 [GitHub]: https://github.com/
 [PyCharm]: https://www.jetbrains.com/pycharm/
 [PyCharm creating a virtual environment]: https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html
+[pyinstaller]: http://www.pyinstaller.org/
 [Spyder]: https://www.spyder-ide.org/
 [tox]: https://github.com/tox-dev/tox
 [Using Python environments in VS Code]: https://code.visualstudio.com/docs/python/environments
