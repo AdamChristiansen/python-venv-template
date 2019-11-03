@@ -120,6 +120,10 @@ the terminal.
 **Note**: You need to activate the virtual environment every time you want to
 work on the project in a new terminal.
 
+**Note**: The virtual environment does not necessarily have to be activated to
+use the configured environment. Instead or running `python` or `pip`, run
+`.env/bin/python` or `.env/bin/pip`, respectively.
+
 4.  Now you can install all of the required packages using
 
     ```sh
@@ -144,7 +148,8 @@ tox
 ```
 
 and the testing environment will automatically be created, tests will be
-discovered and run, and a report will be printed.
+discovered and run, and a report will be printed. Testing is done with the
+[pytest] framework.
 
 **Note**: The `envlist` in `tox.ini` requires that the appropriately versioned
 Python binaries be installed somewhere in the `PATH`.
@@ -250,6 +255,7 @@ that an executable built on Linux will not run on Windows and vice versa.
 [PyCharm]: https://www.jetbrains.com/pycharm/
 [PyCharm creating a virtual environment]: https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html
 [pyinstaller]: http://www.pyinstaller.org/
+[pytest]: https://pytest.org/
 [Spyder]: https://www.spyder-ide.org/
 [tox]: https://github.com/tox-dev/tox
 [Using Python environments in VS Code]: https://code.visualstudio.com/docs/python/environments
